@@ -1,0 +1,22 @@
+[project]
+name = "friction-marl"
+version = "0.1.0"
+description = "Multi-Agent RL simulation for coordination friction experiments"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Resurrexi"}]
+dependencies = [
+  "torch",
+  "gymnasium",
+  "numpy",
+  "pandas",
+  "scipy",
+  "matplotlib",
+  "seaborn",
+  "tqdm",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["friction_marl*"]
