@@ -81,12 +81,32 @@ def run_factorial_experiment(
     conditions = generate_conditions()
     action_map = build_action_map(n_resources)
 
+    output_dir.mkdir(parents=True, exist_ok=True)
+    episode_path = output_dir / "episode_results.csv"
+    replication_path = output_dir / "replication_results.csv"
+    policy_path = output_dir / "policy_vectors.npz"
+
+    completed = set()
     episode_rows: List[dict] = []
     replication_rows: List[dict] = []
     policy_vectors: Dict[str, np.ndarray] = {}
 
+    if episode_path.exists():
+        existing_episode = pd.read_csv(episode_path)
+        episode_rows = existing_episode.to_dict(orient="records")
+    if replication_path.exists():
+        existing_rep = pd.read_csv(replication_path)
+        replication_rows = existing_rep.to_dict(orient="records")
+        for _, row in existing_rep.iterrows():
+            completed.add((row["alpha"], row["sigma"], row["epsilon"], row["replication"]))
+    if policy_path.exists():
+        data = np.load(policy_path, allow_pickle=True)
+        policy_vectors = {k: data[k] for k in data.files}
+
     for cond in tqdm(conditions, desc="Conditions"):
         for rep in range(n_replications):
+            if (cond.alpha, cond.sigma, cond.epsilon, rep) in completed:
+                continue
             env_seed = int(rng.integers(0, 2**31 - 1))
             env = ResourceAllocationEnv(
                 EnvConfig(n_agents=n_agents, n_resources=n_resources), seed=env_seed
@@ -178,11 +198,16 @@ def run_factorial_experiment(
                 }
             )
 
+            episode_df = pd.DataFrame(episode_rows)
+            replication_df = pd.DataFrame(replication_rows)
+            episode_df.to_csv(episode_path, index=False)
+            replication_df.to_csv(replication_path, index=False)
+            np.savez(policy_path, **policy_vectors)
+
     episode_df = pd.DataFrame(episode_rows)
     replication_df = pd.DataFrame(replication_rows)
 
-    output_dir.mkdir(parents=True, exist_ok=True)
-    episode_df.to_csv(output_dir / "episode_results.csv", index=False)
-    replication_df.to_csv(output_dir / "replication_results.csv", index=False)
+    episode_df.to_csv(episode_path, index=False)
+    replication_df.to_csv(replication_path, index=False)
 
     return episode_df, replication_df, policy_vectors
