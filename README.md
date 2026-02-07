@@ -1,13 +1,20 @@
-# marl-rom
+# Friction-MARL
 
-Multi-Agent Reinforcement Learning simulation for testing a coordination friction framework.
+**Multi-Agent Reinforcement Learning with Friction Dynamics**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+Code companion to: [Axiom of Consent: Friction Dynamics in Multi-Agent Coordination](https://arxiv.org/abs/2601.06692) (DAI-2601)
 
 ## Overview
-This codebase simulates a multi-agent resource allocation environment and evaluates whether coordination failure correlates with the theoretical friction function:
 
-F = σ × (1 + ε) / (1 + α)
+Multi-agent reinforcement learning simulation for testing coordination friction frameworks. The codebase simulates a multi-agent resource allocation environment and evaluates whether coordination failure correlates with the theoretical friction function:
 
-It runs a 5×5×5 factorial design over alignment (α), stakes (σ), and observation entropy (ε), with replications per condition, trains independent Q-learning agents, and computes friction proxies plus regression analyses.
+```
+F = sigma * (1 + epsilon) / (1 + alpha)
+```
+
+It runs a 5x5x5 factorial design over alignment (alpha), stakes (sigma), and observation entropy (epsilon), with replications per condition, trains independent Q-learning agents, and computes friction proxies plus regression analyses.
 
 ## Quickstart
 
@@ -31,21 +38,34 @@ python run_experiments.py \
   --seed 123
 ```
 
-Outputs:
-- Raw results: CSV in `results/`
-- Analysis tables and plots in `results/analysis/`
+Outputs: Raw results CSV in `results/`, analysis tables and plots in `results/analysis/`.
 
-## Notes
-- Default settings are computationally heavy (125 conditions × 30 replications × 10,000 episodes). Consider reducing episodes or replications for quick tests.
-- The environment uses continuous resource levels, with agent actions from {-1, 0, +1} per resource.
+Default settings are computationally heavy (125 conditions x 30 replications x 10,000 episodes). Reduce episodes or replications for quick tests.
 
 ## Project Layout
 
 ```
-friction_marl/
-  envs/
-  agents/
-  experiments/
-  utils/
-run_experiments.py
+friction-marl/
+├── friction_marl/
+│   ├── envs/          # Resource allocation environments
+│   ├── agents/        # Q-learning agent implementations
+│   ├── experiments/   # Experiment configurations
+│   └── utils/         # Analysis and plotting utilities
+├── run_experiments.py # Main entry point
+├── requirements.txt   # Dependencies
+└── pyproject.toml     # Package configuration
 ```
+
+## Related Papers
+
+- Axiom of Consent (DAI-2601): [arXiv:2601.06692](https://arxiv.org/abs/2601.06692)
+- ROM (DAI-2503): [arXiv:2601.06363](https://arxiv.org/abs/2601.06363)
+
+## Authors
+
+- **Murad Farzulla** -- [Dissensus AI](https://dissensus.ai)
+  - ORCID: [0009-0002-7164-8704](https://orcid.org/0009-0002-7164-8704)
+
+## License
+
+MIT License
