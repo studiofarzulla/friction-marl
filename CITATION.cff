@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "friction-marl: Multi-Agent Reinforcement Learning Validation of Friction Dynamics"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Farzulla
+    given-names: Murad
+    orcid: "https://orcid.org/0009-0002-7164-8704"
+    email: murad@dissensus.ai
+repository-code: "https://github.com/studiofarzulla/friction-marl"
+license: MIT
+keywords:
+  - multi-agent reinforcement learning
+  - friction dynamics
+  - factorial experimental design
+  - coordination games
+  - replicator dynamics
+references:
+  - type: article
+    title: "The Replicator-Optimization Mechanism: A Scale-Relative Formalism for Persistence-Conditioned Dynamics"
+    authors:
+      - family-names: Farzulla
+        given-names: Murad
+    url: "https://arxiv.org/abs/2601.06363"
+  - type: article
+    title: "The Axiom of Consent: Friction Dynamics in Multi-Agent Coordination"
+    authors:
+      - family-names: Farzulla
+        given-names: Murad
+    url: "https://arxiv.org/abs/2601.06692"
