@@ -1,7 +1,7 @@
 # MARL 5×5×5 Factorial — Key Findings & Interpretation
 
 **Date:** 2026-02-13
-**Data:** GPU factorial complete (125 conditions × 30 reps × 1000 episodes), CPU factorial 51% done (65/125 conditions × 30 reps × 10,000 episodes)
+**Data:** Both GPU and CPU full factorials complete (125 conditions × 30 reps × 1000 episodes; `replication_results.csv` has all 3750 rows)
 
 ---
 
