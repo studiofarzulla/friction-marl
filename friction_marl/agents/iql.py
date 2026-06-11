@@ -87,6 +87,7 @@ class IQLAgent:
         return self.config.epsilon_start + frac * (self.config.epsilon_end - self.config.epsilon_start)
 
     def select_action(self, obs: np.ndarray) -> int:
+        self.steps += 1
         if self._rng.random() < self.epsilon():
             return int(self._rng.integers(0, self.action_dim))
         obs_t = torch.tensor(obs, dtype=torch.float32).unsqueeze(0)

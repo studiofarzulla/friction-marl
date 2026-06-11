@@ -14,6 +14,21 @@ build/
 # Large data files
 *.npz
 
+# Run logs
+*.log
+
+# Empty scratch dir
+_timing_test/
+
+# Heavy result artifacts (published to Zenodo, not git)
+# Large per-condition data dumps and figure renders live on Zenodo.
+# Keep MARL_FINDINGS.md, report .md, .tex tables, .json, and small
+# summary CSVs (metrics/regressions/anova) — those are NOT ignored.
+results/**/episode_results.csv
+results/**/replication_results.csv
+results/**/*.png
+results/**/*.pdf
+
 # IDE
 .idea/
 .vscode/

@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{Pairwise and Three-Way Interaction Effects}
+\label{tab:marl-interactions}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Interaction} & \textbf{$F$-statistic} & \textbf{$\eta^2$} & \textbf{$p$-value} & \textbf{df} \\
+\midrule
+$\alpha \times \sigma$ & $10.24$*** & $0.0210$ & $< 0.001$ & 16 \\
+$\alpha \times \varepsilon$ & $1.10$ & $0.0023$ & $0.350$ & 16 \\
+$\sigma \times \varepsilon$ & $1.85$* & $0.0038$ & $0.021$ & 16 \\
+$\alpha \times \sigma \times \varepsilon$ & $0.94$ & $0.0077$ & $0.623$ & 64 \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Gini coefficient (agent inequality)}} \\
+\midrule
+$\alpha \times \sigma$ & $2.58$*** & $0.0059$ & $< 0.001$ & 16 \\
+$\alpha \times \varepsilon$ & $2.84$*** & $0.0065$ & $< 0.001$ & 16 \\
+$\sigma \times \varepsilon$ & $0.97$ & $0.0022$ & $0.491$ & 16 \\
+$\alpha \times \sigma \times \varepsilon$ & $1.04$ & $0.0096$ & $0.390$ & 64 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Upper panel: dependent variable is mean reward. Lower panel: dependent variable is Gini coefficient across agent rewards. Significance: *** $p < 0.001$, ** $p < 0.01$, * $p < 0.05$.
+\end{tablenotes}
+\end{table}

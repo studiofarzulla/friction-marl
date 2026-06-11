@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Cross-validation of GPU and CPU implementations across 125 factorial conditions. Both runs used identical parameters: 5 levels each of preference alignment ($\alpha$), preference intensity ($\sigma$), and observation noise ($\varepsilon$), with 30 replications per condition and 1{,}000 training episodes.}
+\label{tab:cross-validation-summary}
+\begin{tabular}{lcccccc}
+\toprule
+Metric & Pearson $r$ & Spearman $\rho$ & ICC(3,1) & Mean Diff & LoA$_{95\%}$ \\
+\midrule
+Reward Gap & 0.945 & 0.948 & 0.913 & +0.478 & [-0.192, +1.148] \\
+Convergence Time & 0.081 & 0.132 & 0.048 & -1.027 & [-8.752, +6.699] \\
+Policy Variance & 0.574 & 0.570 & 0.572 & -0.012 & [-0.028, +0.005] \\
+Pareto Inefficiency & 0.817 & 0.845 & 0.817 & +0.214 & [-0.892, +1.321] \\
+\bottomrule
+\end{tabular}
+\end{table}

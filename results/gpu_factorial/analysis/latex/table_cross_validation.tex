@@ -1,0 +1,20 @@
+\begin{table}[ht]
+\centering
+\caption{Cross-Implementation Validation: GPU vs CPU Factorial Results}
+\label{tab:marl-cross-validation}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} & \textbf{GPU (vectorized)} & \textbf{CPU (parallel)} & \textbf{Overlap} \\
+\midrule
+Conditions & $125$ & $65$ & $65$ \\
+Replications/condition & $30$ & $30$ & --- \\
+$r$ (mean reward) & \multicolumn{2}{c}{---} & $0.9273$ \\
+$r$ (convergence time) & \multicolumn{2}{c}{---} & $0.1060$ \\
+MAE (mean reward) & \multicolumn{2}{c}{---} & $0.4610$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item GPU implementation uses PyTorch-vectorized environments on AMD 7900 XTX. CPU implementation uses multiprocessing (22 workers). Overlap column reports Pearson correlation and mean absolute error across shared conditions.
+\end{tablenotes}
+\end{table}

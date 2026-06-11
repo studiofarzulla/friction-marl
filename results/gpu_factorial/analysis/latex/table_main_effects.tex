@@ -1,0 +1,27 @@
+\begin{table}[ht]
+\centering
+\caption{Three-Way Factorial ANOVA: Main Effects on Mean Reward}
+\label{tab:marl-main-effects}
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+\textbf{Source} & \textbf{$F$-statistic} & \textbf{$\eta^2$} & \textbf{$p$-value} & \textbf{Direction} \\
+\midrule
+Alignment ($\alpha$) & $186.76$*** & $0.0958$ & $< 0.001$ & U-shaped: $\alpha = 0$ worst \\
+Stakes ($\sigma$) & $772.55$*** & $0.3965$ & $< 0.001$ & Higher $\sigma$ $\Rightarrow$ higher friction \\
+Entropy ($\varepsilon$) & $15.30$*** & $0.0079$ & $< 0.001$ & Higher $\varepsilon$ $\Rightarrow$ higher friction \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Interaction effects}} \\
+\midrule
+$\alpha \times \sigma$ & $10.24$*** & $0.0210$ & $< 0.001$ & \\
+$\alpha \times \varepsilon$ & $1.10$ & $0.0023$ & $0.350$ & \\
+$\sigma \times \varepsilon$ & $1.85$* & $0.0038$ & $0.021$ & \\
+$\alpha \times \sigma \times \varepsilon$ & $0.94$ & $0.0077$ & $0.623$ & \\
+\midrule
+Residual & & & & (df = 3625) \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Significance: *** $p < 0.001$, ** $p < 0.01$, * $p < 0.05$. $\eta^2$ = proportion of total variance explained.
+\end{tablenotes}
+\end{table}

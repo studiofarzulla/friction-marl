@@ -1,0 +1,30 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            mean_reward   R-squared:                       0.404
+Model:                            OLS   Adj. R-squared:                  0.403
+Method:                 Least Squares   F-statistic:                     422.9
+Date:                Fri, 13 Feb 2026   Prob (F-statistic):               0.00
+Time:                        18:07:24   Log-Likelihood:                -5192.1
+No. Observations:                3750   AIC:                         1.040e+04
+Df Residuals:                    3743   BIC:                         1.044e+04
+Df Model:                           6                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+Intercept        -0.0095      0.064     -0.148      0.882      -0.135       0.116
+alpha            -0.0915      0.076     -1.196      0.232      -0.241       0.058
+sigma            -2.6194      0.097    -27.085      0.000      -2.809      -2.430
+epsilon          -0.0864      0.105     -0.825      0.409      -0.292       0.119
+alpha:sigma       0.1355      0.099      1.373      0.170      -0.058       0.329
+alpha:epsilon     0.0549      0.079      0.695      0.487      -0.100       0.210
+sigma:epsilon    -0.3327      0.158     -2.107      0.035      -0.642      -0.023
+==============================================================================
+Omnibus:                     1513.092   Durbin-Watson:                   1.648
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             9790.735
+Skew:                          -1.790   Prob(JB):                         0.00
+Kurtosis:                      10.060   Cond. No.                         17.7
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

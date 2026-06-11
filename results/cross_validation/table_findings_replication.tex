@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Replication of headline findings across GPU and CPU implementations. All five findings replicate with consistent direction and comparable magnitudes, demonstrating robustness to implementation differences.}
+\label{tab:findings-replication}
+\begin{tabular}{p{4.5cm}|cc|c}
+\toprule
+Finding & GPU & CPU & Replicates? \\
+\midrule
+U-shape ($\alpha=0$ worst) & $\bar{r}_{\alpha=0}=-2.49$ & $\bar{r}_{\alpha=0}=-1.85$ & Yes \\
+Stakes dominate ($\sigma > \alpha$) & $\eta^2_\sigma / \eta^2_\alpha = 4.1\times$ & $\eta^2_\sigma / \eta^2_\alpha = 3.2\times$ & Yes \\
+Friction equalizes & $27\times$ variance reduction & $19\times$ variance reduction & Yes \\
+Dynamic equilibria & Policy conv. = 0.9\% & Policy conv. = 0.1\% & Yes \\
+Info quality irrelevant & $\eta^2_\varepsilon = 0.008$ & $\eta^2_\varepsilon = 0.001$ & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}

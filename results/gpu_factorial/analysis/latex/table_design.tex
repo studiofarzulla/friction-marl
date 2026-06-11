@@ -1,0 +1,22 @@
+\begin{table}[ht]
+\centering
+\caption{MARL Factorial Experiment: Design Parameters}
+\label{tab:marl-design}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Symbol} & \textbf{Levels} & \textbf{Interpretation} \\
+\midrule
+Alignment & $\alpha$ & $\{-0.8, -0.4, 0, 0.4, 0.8\}$ & Target correlation between agents \\
+Stakes & $\sigma$ & $\{0.2, 0.4, 0.6, 0.8, 1.0\}$ & Weight magnitude on resources \\
+Entropy & $\varepsilon$ & $\{0, 0.25, 0.5, 0.75, 1.0\}$ & Observation noise level \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Design summary}} \\
+\midrule
+Conditions & \multicolumn{3}{l}{$5 \times 5 \times 5 = 125$ (full factorial)} \\
+Replications & \multicolumn{3}{l}{30 per condition (3,750 total)} \\
+Episodes & \multicolumn{3}{l}{1,000 per replication} \\
+Agents & \multicolumn{3}{l}{4 per environment (IQL)} \\
+Total training runs & \multicolumn{3}{l}{3,750} \\
+\bottomrule
+\end{tabular}
+\end{table}

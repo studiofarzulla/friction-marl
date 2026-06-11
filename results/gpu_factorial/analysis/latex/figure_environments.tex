@@ -1,0 +1,27 @@
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/heatmap_reward_gap_alpha_sigma.png}
+\caption{Mean reward gap across alignment ($\alpha$) and stakes ($\sigma$) conditions, averaged over entropy levels and 30 replications per cell. Darker regions indicate higher coordination friction. Friction increases monotonically with stakes (left to right) as predicted. The alignment axis reveals a U-shaped pattern: neutral alignment ($\alpha = 0$) produces the highest friction at every stakes level, while both cooperative ($\alpha > 0$) and adversarial ($\alpha < 0$) alignment reduce friction. This contradicts the monotonic prediction of the $1/(1+\alpha)$ term but is consistent with the interpretation that alignment \emph{structure}---whether cooperative or adversarial---provides learnable signal for IQL agents.}
+\label{fig:marl-heatmap-alpha-sigma}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/learning_curve_mean_reward.png}
+\caption{Learning curves for representative conditions spanning the friction spectrum. Traces show mean reward (averaged across 4 agents) over 1,000 training episodes, smoothed with a 50-episode rolling window. Low-stakes conditions converge more rapidly regardless of alignment; high-stakes conditions exhibit persistent coordination failure characteristic of non-stationary multi-agent dynamics under IQL.}
+\label{fig:marl-learning-curves}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/gini_vs_alpha.png}
+\caption{Agent reward inequality (Gini coefficient) as a function of alignment ($\alpha$), pooled across stakes and entropy levels. Error bars show 95\% bootstrap confidence intervals (30 replications). Mean Gini is 0.397 (range: 0.252--0.747). While the Gini shows moderate variation across alignment levels, the more revealing metric is agent reward \emph{variance}: 28$\times$ higher at neutral alignment ($\alpha = 0$) than at the alignment extremes ($|\alpha| = 0.8$), demonstrating that friction acts as a structural equaliser.}
+\label{fig:marl-gini-alpha}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/heatmap_reward_gap_alpha_epsilon.png}
+\caption{Mean reward gap across alignment ($\alpha$) and entropy ($\varepsilon$) conditions, averaged over stakes levels. The U-shaped alignment effect persists across all entropy levels. The $\alpha \times \varepsilon$ interaction is non-significant ($p = 0.350$), indicating that entropy amplifies friction approximately additively rather than multiplicatively as the $(1+\varepsilon)/(1+\alpha)$ form would predict.}
+\label{fig:marl-heatmap-alpha-epsilon}
+\end{figure}

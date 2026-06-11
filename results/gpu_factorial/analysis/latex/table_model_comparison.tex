@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering
+\caption{Model Comparison: Alternative Friction Specifications (DV: Reward Gap)}
+\label{tab:marl-model-comparison}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Model} & \textbf{$R^2$} & \textbf{AIC} & \textbf{BIC} & \textbf{RMSE} \\
+\midrule
+M1: Friction $\sigma(1+\varepsilon)/(1+\alpha)$ & $0.1084$ & $322.3$ & $327.9$ & $0.8643$ \\
+M2: Additive $\sigma + \varepsilon - \alpha$ & $0.1586$ & $315.0$ & $320.7$ & $0.8396$ \\
+M3: Multiplicative $\sigma \cdot \varepsilon \cdot (1 - \alpha)$ & $0.1860$ & $310.9$ & $316.6$ & $0.8258$ \\
+M4: Independent $\alpha + \sigma + \varepsilon$ & $0.7533$ & \textbf{$165.7$} & $177.0$ & $0.4547$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item M1--M3 are single-predictor models (2 parameters each). M4 uses three independent predictors (4 parameters). Bold indicates lowest AIC. $\Delta$AIC (M4 vs M1) = $156.6$, constituting decisive evidence by information-theoretic criteria.
+\end{tablenotes}
+\end{table}
